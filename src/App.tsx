@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { FabllbackProvider } from './composables/FabllbackProvider';
 import { ModalProvider } from './composables/ModalProvider';
 import 'nprogress/nprogress.css';
@@ -13,11 +13,11 @@ function App() {
     <BrowserRouter>
       <ModalProvider>
         <FabllbackProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-          </Routes>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="about" component={About} />
+            <Route path="contact" component={Contact} />
+          </Switch>
         </FabllbackProvider>
       </ModalProvider>
     </BrowserRouter>
